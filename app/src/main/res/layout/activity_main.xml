@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ncoofee"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:gravity="clip_vertical"
+        android:text="RV 's CAFE"
+        android:textColor="#F1EEEE"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="35dp">
+    </TextView>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu Card"
+        android:layout_marginStart="135dp"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp">
+    </Button>
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
+        android:textColor="#FAF2F2"
+        android:textColorHint="#F8ECEC"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"
+        android:textColor="#F4F0F0"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sub"
+        android:textSize="20sp"
+        android:layout_marginStart="30dp"
+        />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#FDFCFC"
+            android:textSize="24sp" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:textSize="20sp" />
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Want to add extra sugar"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="Do you know who is RV ?"
+        android:textColor="#FBFAFA"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:background="#F6F0F0"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"/>
+</LinearLayout>

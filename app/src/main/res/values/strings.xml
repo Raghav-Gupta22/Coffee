@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Coffee</string>
+    <string name="order">ORDER</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="cost_per_coffee_is_20_bucks">Cost per coffee is 20 bucks.</string>
+    <string name="_2">2</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="quantity">QUANTITY:</string>
+    <string name="rv_s_cafe">RV\'S Cafe</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Rate"
+        android:id="@+id/rate">
+    </item>
+    <item
+        android:title="Cafe Gallery"
+        android:id="@+id/gallery"/>
+    <item
+        android:title="About Web"
+        android:id="@+id/web"/>
+</menu>
