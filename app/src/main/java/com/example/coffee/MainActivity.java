@@ -1,11 +1,5 @@
 package com.example.coffee;
 
-
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,51 +7,57 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.coffee.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
-    Button inc, dec, order,menucard;
-    TextView nn;
+    Button dec, menucard;
     EditText name;
-    CheckBox c;
     String sugar;
     Spinner spinner;
     String[] arr = {"Yes", "No", "Maybe", "Very Well"};
+    ActivityMainBinding activityMainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        // inflating our xml layout in our activity main binding
+        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        nn = (TextView) findViewById(R.id.textView9);
-        inc = (Button) findViewById(R.id.button2);
-        dec = (Button) findViewById(R.id.button);
-        order = (Button) findViewById(R.id.button3);
-        name=(EditText)findViewById(R.id.editTextTextPersonName2);
-        menucard=(Button)findViewById(R.id.button4);
+        // getting our root layout in our view.
+        View view = activityMainBinding.getRoot();
+
+        // below line is to set
+        // Content view for our layout.
+        setContentView(view);
+
+        name = (EditText) findViewById(R.id.editTextTextPersonName2);
+        menucard = (Button) findViewById(R.id.button4);
 
 
-        inc.setOnClickListener(new View.OnClickListener() {
+        activityMainBinding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num = Integer.parseInt(nn.getText().toString());
+                int num = Integer.parseInt(activityMainBinding.textView9.getText().toString());
                 num = num + 1;
-                nn.setText(String.valueOf(num));
+                activityMainBinding.textView9.setText(String.valueOf(num));
             }
         });
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num = Integer.parseInt(nn.getText().toString());
+                int num = Integer.parseInt(activityMainBinding.textView9.getText().toString());
                 if(num>=2) {
                     num = num - 1;
-                    nn.setText(String.valueOf(num));
+                    activityMainBinding.textView9.setText(String.valueOf(num));
                 }
                 else
                     Toast.makeText(MainActivity.this, "YOU HAVE TO ORDER MINIMUM 1 COFFEE", Toast.LENGTH_LONG).show();
@@ -65,11 +65,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        c = (CheckBox) findViewById(R.id.checkBox);
-        c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        activityMainBinding.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (c.isChecked()) {
+                if (activityMainBinding.checkBox.isChecked()) {
                     Toast.makeText(MainActivity.this, "SUGAR ADDED", Toast.LENGTH_SHORT).show();
                     sugar = "yes";
                 } else {
@@ -83,17 +82,16 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
-            order.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String pname=name.getText().toString();
-                    if(pname.equals(""))                                                             //also write if(TextUtils.isEmpty(pname));
-                    {
-                        name.setError("Please Enter Name");                                          //setError work on object not on string.
-                    }
-                    else {
+        activityMainBinding.button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pname = name.getText().toString();
+                if (pname.equals(""))                                                             //also write if(TextUtils.isEmpty(pname));
+                {
+                    name.setError("Please Enter Name");                                          //setError work on object not on string.
+                } else {
                     Intent intent = new Intent(MainActivity.this, summaryactivity.class);
-                    String ncoffee = nn.getText().toString();
+                    String ncoffee = activityMainBinding.textView9.getText().toString();
                     intent.putExtra("data", pname);
                     intent.putExtra("data2", ncoffee);
                     startActivity(intent);
