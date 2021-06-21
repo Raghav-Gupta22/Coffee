@@ -1,2 +1,2 @@
 # Coffee
-A coffee ordering app.
+A simple coffee ordering app.
